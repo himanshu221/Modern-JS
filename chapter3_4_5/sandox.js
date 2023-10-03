@@ -93,3 +93,76 @@ ul.innerHTML = html
 
 //////// Objects
 
+// object literals
+
+let user = {
+    name: 'Himanshu', // property as a key value pair
+    age: 25,
+    email: 'himanshubhushan775@gmail.com',
+    location: 'Delhi',
+    interests: ['Climbing', 'Dance', 'Running'],
+
+    login: () => console.log(`User ${this.name} has logged in.`),
+    
+    // getInterests: () => this.interests.forEach((interest) => console.log(interest)) : we cannot do this as when we use arrow functions, 'this' context is not set to the user object, hence it remains set to window object
+    getInterests(){
+        this.interests.forEach((interest) => console.log(interest))
+    }
+}
+
+console.log(user)
+console.log(user.name) // accessing an object property
+console.log(user['name']) // accessing an object property
+
+user.name = 'Krishna'
+user['name'] = 'Banku' // setting a property
+
+console.log(user)
+
+console.log(typeof user) // -> object
+
+user.login()
+
+// 'this' refers to the current context in the code, if 'this' is present at the root then it refers to the window object
+console.log(this)
+
+// 'this' is set to the object from which it is called,  that means when we do user.getInterest(), 'this' inside this function will be set to user object
+user.getInterests()
+
+
+// Math object
+
+console.log(Math)
+console.log(Math.PI)
+console.log(Math.round(7.49999))
+
+const random = Math.random()
+
+console.log(random)
+
+// Number, String, boolean, null, undefined, symbols are promotive datatypes on JS while all objects are reference datatypes
+
+// primitive types are stored in memory in stack while reference datatypes are stored in heaps in memory
+
+/* the data of reference types is stored in heap and its reference with its accessor is stored in stack which points to the heap location
+let arr = [1,2,3,4]
+here [1,2,3,4] will  be stored in heap while a pointer with accessor name arr will be stoed in stack pointing to the heap momeory location
+*/
+
+/* a copy of a primtive datatype will create a new variable with the value in stack while when we create copy of a referenced type variable
+it creates a new pointer and points to the same heap memory, so if we change the value using one variable (pointer) it will change the value
+associated with the other variable (pointer)  */ 
+
+let score1 = 50
+let score2 = score1
+
+score1 = 100
+
+console.log(`score1 : ${score1}, score2: ${score2}`)
+
+let arr1 = [1,2,3,4]
+let arr2 = arr1
+
+arr1[0] = 100
+
+console.log(`arr1: ${arr1}, arr2: ${arr2}`)
