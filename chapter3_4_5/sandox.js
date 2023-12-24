@@ -40,6 +40,25 @@ speak()
 no matter where they are defined before executing the code.
 2. JavaScript allocates memory for all variables and functions defined in the program before execution.
 3. Undeclared variable is assigned the global scope by javascript
+4. Variables declared with let or const are hoisted WITHOUT a default initialization. So accessing them before the line they were declared throws ReferenceError: Cannot access 'variable' before initialization.
+    But variables declared with var are hoisted WITH a default initialization of undefined. So accessing them before the line they were declared returns undefined.
+eg for var :
+console.log(number)
+// undefined
+
+var number = 10
+
+console.log(number)
+// 10
+
+eg for let/const:
+console.log(number)
+// ReferenceError: Cannot access 'number' before initialization
+
+let number = 10
+
+console.log(number)
+
 */
 
 // passing arguments to function
