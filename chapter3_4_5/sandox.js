@@ -10,7 +10,13 @@ while(i < 5){
 }
 
 // Logical operator : OR ( || ) , AND ( && ), NOT (!)
-// Note: A variable defined as var variable ignores block scope
+// Note: A variable defined as var has function scope i.e it will be available throughout the function
+// A variable defined as let, const has block scope , it will be scope within {}.
+
+/*
+eg -
+https://josephcardillo.medium.com/the-difference-between-function-and-block-scope-in-javascript-4296b2322abe
+*/
 
 /////////////////////////// Functions 
 
